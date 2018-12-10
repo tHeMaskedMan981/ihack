@@ -22,6 +22,41 @@
     <!-- Responsive Style -->
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
+    <style type="text/css">
+      
+.buttonSelector {
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: #3770FF;
+    border-radius: 3px;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 20px;
+    text-align: center;
+}
+
+buttonSelector:not([disabled]) {
+    cursor: pointer;
+}
+
+buttonSelector:hover {
+    background-color: #2954BF !important;
+}
+
+buttonSelector .logo {
+    /* Please keep the color of Devfolio logo mark either white (#FFFFFF) or black (#000000) */
+    fill: black ;
+}
+    </style>
+
   </head>
   <body>
 
@@ -143,7 +178,9 @@
                 <h6 class="wow fadeInDown " data-wow-delay=".4s">Hackathon Challenge</h6>
                 <h6 class="wow fadeInDown " data-wow-delay=".4s">19th-20th Jan 19 | IIT Bombay</h6>
 
-                <a href="#" class="fadeInLeft wow btn btn-common btn-lg" data-wow-delay=".6s">Registrations Opening Soon</a>
+                <a href="https://devfolio.co/external-apply/ihack/" target="_blank" class="fadeInLeft wow btn btn-common btn-lg" data-wow-delay=".6s"><svg class="logo " xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 115.46 123.46" style="height:24px;width:24px;margin-right:8px"><path d="M115.46 68a55.43 55.43 0 0 1-50.85 55.11S28.12 124 16 123a12.6 12.6 0 0 1-10.09-7.5 15.85 15.85 0 0 0 5.36 1.5c4 .34 10.72.51 20.13.51 13.82 0 28.84-.38 29-.38h.26a60.14 60.14 0 0 0 54.72-52.47c.05 1.05.08 2.18.08 3.34z"/><path d="M110.93 55.87A55.43 55.43 0 0 1 60.08 111s-36.48.92-48.58-.12C5 110.29.15 104.22 0 97.52l.2-83.84C.38 7 5.26.94 11.76.41c12.11-1 48.59.12 48.59.12a55.41 55.41 0 0 1 50.58 55.34z"/></svg>Apply with Devfolio</a>
+                <!-- <button id="devfolio-apply-now" class="fadeInLeft wow"><svg class="logo " xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 115.46 123.46" style="height:24px;width:24px;margin-right:8px"><path d="M115.46 68a55.43 55.43 0 0 1-50.85 55.11S28.12 124 16 123a12.6 12.6 0 0 1-10.09-7.5 15.85 15.85 0 0 0 5.36 1.5c4 .34 10.72.51 20.13.51 13.82 0 28.84-.38 29-.38h.26a60.14 60.14 0 0 0 54.72-52.47c.05 1.05.08 2.18.08 3.34z"/><path d="M110.93 55.87A55.43 55.43 0 0 1 60.08 111s-36.48.92-48.58-.12C5 110.29.15 104.22 0 97.52l.2-83.84C.38 7 5.26.94 11.76.41c12.11-1 48.59.12 48.59.12a55.41 55.41 0 0 1 50.58 55.34z"/></svg>Apply with Devfolio</button> -->
+                             
                 <!-- <a href="#" class="fadeInRight wow btn btn-border btn-lg" data-wow-delay=".6s">Learn More</a> -->               
               </div>
               <div class="col-md-4">  
@@ -1606,5 +1643,28 @@ Are you providing travel reimbursements?
     <script src="assets/js/map.js"></script>
     <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyCsa2Mi2HqyEcEnM1urFSIGEpvualYjwwM"></script>
       
+    <script type="text/javascript">
+      
+document.addEventListener('DOMContentLoaded', function () {
+    let devfolioOptions = {
+        buttonSelector: 'devfolio-apply-now',
+        key: 'ihack',
+    }
+
+    let script = document.createElement('script');
+    script.src = "https://apply.devfolio.co";
+    document.head.append(script);
+
+    script.onload = function () {
+        new Devfolio(devfolioOptions);
+    }
+
+    script.onerror = function () {
+        document.querySelector(devfolioOptions.buttonSelector).addEventListener('click', function () {
+            window.location.href = 'https://devfolio.co/external-apply/' + devfolioOptions.key;
+        });
+    }
+});
+    </script>  
   </body>
 </html>
