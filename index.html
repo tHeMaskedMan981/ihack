@@ -55,7 +55,33 @@
     /* Please keep the color of Devfolio logo mark either white (#FFFFFF) or black (#000000) */
     fill: white ;
 }
+
+#cover{
+
+ display: block !important;
+}
+#cover_mobile {
+
+display: none !important;
+}
+@media screen and (max-width: 800px){
+#cover{
+
+ display: none !important;
+}
+#cover_mobile {
+
+display: block !important;
+}
+
+}
+
     </style>
+
+<script type="text/javascript">
+  
+
+</script>
 
   </head>
   <body>
@@ -170,7 +196,9 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="assets/img/slider/slide1.jpg" alt="First slide">
+            <img id="cover" class="d-block w-100 cover" src="assets/img/slider/slide1.jpg" alt="First slide">
+            <img id="cover_mobile" class="d-block w-100 cover" src="assets/img/slider/ihack_mobile.jpg" alt="First slide">
+            
             <div class="carousel-caption d-md-block row">
               <div class="col-md-4" style="text-align: left;">  
                 <p class="fadeInUp wow" data-wow-delay=".6s">E-Cell IIT Bombay presents </p>
