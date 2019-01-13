@@ -30,64 +30,74 @@
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
   <link rel="icon" href="https://ecell.in/esummit/favicon.ico" type="image/x-icon"/>
     <style type="text/css">
+      @media only screen and (max-width: 800px){
+        #carousel-caption{
+          padding-top: 200px;
+        }
+      }
+      @media only screen and (min-width: 800px){
+        #carousel-caption{
+          padding-bottom: 50px;
+        }
+      }
       
-#devfolio-apply-now {
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-    align-items: center;
-    background-color: #3770FF;
-    border-radius: 3px;
-    border: none;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    font-size: 18px;
-    font-weight: 600;
-    padding: 12px 20px;
-    text-align: center;
-}
+      #devfolio-apply-now {
+          -ms-flex-align: center;
+          -webkit-box-align: center;
+          align-items: center;
+          background-color: #3770FF;
+          border-radius: 3px;
+          border: none;
+          color: #FFFFFF;
+          cursor: pointer;
+          display: -ms-flexbox;
+          display: -webkit-box;
+          display: flex;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+          font-size: 18px;
+          font-weight: 600;
+          padding: 12px 20px;
+          text-align: center;
+      }
 
-#devfolio-apply-now:not([disabled]) {
-    cursor: pointer;
-}
+      #devfolio-apply-now:not([disabled]) {
+          cursor: pointer;
+      }
 
-#devfolio-apply-now:hover {
-    background-color: #2954BF !important;
-}
+      #devfolio-apply-now:hover {
+          background-color: #2954BF !important;
+      }
 
-#devfolio-apply-now .logo {
-    /* Please keep the color of Devfolio logo mark either white (#FFFFFF) or black (#000000) */
-    fill: white ;
-}
+      #devfolio-apply-now .logo {
+          /* Please keep the color of Devfolio logo mark either white (#FFFFFF) or black (#000000) */
+          fill: white ;
+      }
 
-#cover{
+      #cover{
 
- display: block !important;
-}
-#cover_mobile {
+      display: block !important;
+      }
+      #cover_mobile {
 
-display: none !important;
-}
-@media screen and (max-width: 800px){
-#cover{
+      display: none !important;
+      }
+      @media screen and (max-width: 800px){
+      #cover{
 
- display: none !important;
-}
-#cover_mobile {
+      display: none !important;
+      }
+      #cover_mobile {
 
-display: block !important;
-}
+      display: block !important;
+      }
 
-}
+      }
 
-.speaker_img {
-  height :272px;
-  object-fit: cover;
-  width: 100%;
-}
+      .speaker_img {
+        height :272px;
+        object-fit: cover;
+        width: 100%;
+      }
 
     </style>
 
@@ -228,7 +238,7 @@ display: block !important;
             <img id="cover" class="d-block w-100 cover" src="assets/img/slider/slide1.jpg" alt="First slide">
             <img id="cover_mobile" class="d-block w-100 cover" src="assets/img/slider/ihack_mobile.jpg" alt="First slide">
             
-            <div class="carousel-caption d-md-block row">
+            <div id="carousel-caption" class="carousel-caption d-md-block row">
               <div class="col-md-4" style="text-align: left;">  
                 <p class="fadeInUp wow" data-wow-delay=".6s">E-Cell, IIT Bombay presents </p>
                 <h1 class="wow fadeInDown heading" data-wow-delay=".4s">I_Hack </h1>
